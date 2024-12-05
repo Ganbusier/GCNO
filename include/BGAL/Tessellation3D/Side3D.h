@@ -3,7 +3,11 @@
 #include "BGAL/Algorithm/BOC/BOC.h"
 #include <fenv.h>
 #if WIN32 || _WIN32
-#include <corecrt_math.h>
+    #ifdef _MSC_VER
+    #include <corecrt_math.h> // Microsoft compiler
+    #else
+    #include <cmath>          // Other compilers
+    #endif
 #endif
 #include <CGAL/Simple_cartesian.h>
 #include <CGAL/Interval_nt.h>
