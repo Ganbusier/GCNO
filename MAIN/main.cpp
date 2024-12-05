@@ -25,6 +25,7 @@
 #include <Eigen/Sparse>
 
 using namespace alglib;
+using namespace std;
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
 typedef Kernel::Point_3 Point1;
@@ -562,7 +563,7 @@ int main()
 	// A noise-free point cloud generally requires about 50 iterations, and a noisy point cloud may require more.
 
 
-	string modelpath = "..\\..\\data\\";
+	string modelpath = "../data/";
 	string modelname;
 	omp_set_num_threads(28);
 	{
