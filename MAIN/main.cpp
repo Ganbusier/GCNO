@@ -565,7 +565,7 @@ int main()
 
 	string modelpath = "../data/";
 	string modelname;
-	omp_set_num_threads(28);
+	omp_set_num_threads(12);
 	{
 		modelname = "BS_1000_torus"; // 
 

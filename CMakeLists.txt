@@ -4,7 +4,7 @@ project(NormalOrientation)
 
 
 # Default Build_type RELEASE
-set(CMAKE_BUILD_TYPE RELEASE)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 # CXX STANDARD
 set(CMAKE_CXX_STANDARD 17)
 # Set Version
