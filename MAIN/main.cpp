@@ -548,7 +548,7 @@ void WindingNumLBFGSTest(string modelpath, string model, vector<vector<Eigen::Ve
 }
 
 
-int main()
+int main(int argc, char** argv)
 {
 	// IMPORTANT NOTE: This code is not optimized for speed, but for clarity. 
 	// Please open Openmp and AVX2 in Visual Studio to speed up the code.
@@ -562,13 +562,15 @@ int main()
 	
 	// A noise-free point cloud generally requires about 50 iterations, and a noisy point cloud may require more.
 
+	if (argc < 3) {
+		std::cerr << "Usage: " << argv[0] << " <modelpath> " << " <modelname>" << std::endl;
+		return -1;  
+	}
 
-	string modelpath = "../data/";
-	string modelname;
+	string modelpath = argv[1];
+	string modelname = argv[2];
 	omp_set_num_threads(12);
 	{
-		modelname = "BS_1000_torus"; // 
-
 		cout << modelname << endl;
 		bool Ifdoublelyer = 1; //change this to 0 if you want to try f_{01} = \sum_j^M -w_j
 
